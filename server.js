@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 });
 app.use("/form/",require("./routes/index"))
 app.use("/invoice/",require("./routes/InvoiceRoutes"))
+app.use("/user/",require("./routes/UserRoutes"))
 
 
 app.listen(port, () => {
