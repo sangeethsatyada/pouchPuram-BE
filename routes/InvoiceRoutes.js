@@ -1,10 +1,24 @@
-const express = require('express')
-const { addInvoice, getInvoice,getAllInvoices,updateInvoice } = require('../controllers/InvoiceController')
+// Add this route to your Express router
+const express = require("express")
 const router = express.Router()
-router.post("/addInvoice",addInvoice);
-router.get("/getInvoices",getAllInvoices);
-router.get("/getInvoice/:id",getInvoice);
-router.put("/updateInvoice/:id",updateInvoice);
+const {
+  addInvoice,
+  getInvoice,
+  getAllInvoices,
+  updateInvoice,
+  deleteInvoice,
+  sendReceipt,
+  sendInvitation,
+} = require("../controllers/InvoiceController")
 
+// Existing routes
+router.get("/getInvoices", getAllInvoices)
+router.get("/getInvoice/:id", getInvoice)
+router.post("/addInvoice", addInvoice)
+router.put("/updateInvoice/:id", updateInvoice)
+router.delete("/deleteInvoice/:id", deleteInvoice)
+
+router.post("/sendReceipt", sendReceipt)
+router.post("/sendInvitation", sendInvitation) // You can implement sendInvitation similarly
 
 module.exports = router

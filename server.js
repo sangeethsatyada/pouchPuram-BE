@@ -17,8 +17,10 @@ app.get('/', (req, res) => {
     res.send('This is PouchPro backend running ');
 });
 app.use("/form/",require("./routes/index"))
-app.use("/invoice/",require("./routes/InvoiceRoutes"))
+// app.use("/invoice/",require("./routes/InvoiceRoutes"))
 app.use("/user/",require("./routes/UserRoutes"))
+app.use('/invoice/', require('./routes/InvoiceRoutes'));
+app.use('/clients', require('./routes/ClientRoutes'));
 
 
 app.listen(port, () => {
