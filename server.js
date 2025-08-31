@@ -22,6 +22,13 @@ app.use("/user/",require("./routes/UserRoutes"))
 app.use('/invoice/', require('./routes/InvoiceRoutes'));
 app.use('/clients', require('./routes/ClientRoutes'));
 
+app.use('/api/transactions', require('./routes/transactions'));
+app.use('/api/bank', require('./routes/bank'));
+app.use('/api/sales', require('./routes/sales'));
+app.use('/api/analytics', require('./routes/analytics'));
+app.use('/api/budget', require('./routes/budget'));
+app.use('/api/reports', require('./routes/reports'));
+
 
 app.listen(port, () => {
     console.log(`PouchPro backend is running on port ${port}`);
