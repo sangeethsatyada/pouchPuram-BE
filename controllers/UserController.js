@@ -50,6 +50,7 @@ const register= async (req, res) => {
 const login= async (req, res) => {
   try {
     const { emailOrUsername, password } = req.body;
+    console.log(emailOrUsername, password);
 
     // Validate input
     if (!emailOrUsername || !password) {
@@ -58,6 +59,7 @@ const login= async (req, res) => {
 
     // Find user
     const user = await User.findOne({ email:emailOrUsername });
+    console.log(user);
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDb = async()=>{
   try{
-    mongoose.connect("mongodb://localhost:27017/pouchPro").then(()=>{
+    mongoose.connect("mongodb+srv://dbUser:Password@pouchpro.66znkay.mongodb.net/pouchPro").then(()=>{
       console.log("Connected to DB")
     }).catch((err)=>{
       console.log(err)
