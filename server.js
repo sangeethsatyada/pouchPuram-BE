@@ -5,10 +5,14 @@ const app = express();
 const port = 3000;
 const cors = require('cors')
 
+require("dotenv").config();
+
 app.use(cors())
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+
 
 
 connectDb();
@@ -28,6 +32,8 @@ app.use('/api/sales', require('./routes/sales'));
 app.use('/api/analytics', require('./routes/analytics'));
 app.use('/api/budget', require('./routes/budget'));
 app.use('/api/reports', require('./routes/reports'));
+
+// app.use("/package/addPackagingRequirements",require("./routes/index"))
 
 
 app.listen(port, () => {

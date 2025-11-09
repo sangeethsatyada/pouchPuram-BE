@@ -13,12 +13,13 @@ const transporter = nodemailer.createTransporter({
 
 // Send receipt email for advance payments
 const sendAdvanceReceipt = async (req, res) => {
+  console.log("inside mai")
   try {
-    const { 
-      invoiceId, 
-      clientEmail, 
-      clientName, 
-      advanceAmount, 
+    const {
+      invoiceId,
+      clientEmail,
+      clientName,
+      advanceAmount,
       invoiceNumber,
       projectName,
       paymentMode,
@@ -36,7 +37,7 @@ const sendAdvanceReceipt = async (req, res) => {
       subject: `Payment Receipt - Invoice ${invoiceNumber}`,
       html: `
               <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 700px; margin: 0 auto; padding: 0; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-          
+
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; padding: 40px 30px; text-align: center;">
             <h1 style="margin: 0; font-size: 32px; font-weight: 600;">Thank you for your advance payment!</h1>
@@ -45,7 +46,7 @@ const sendAdvanceReceipt = async (req, res) => {
 
           <!-- Main Content -->
           <div style="padding: 40px 30px; background: #ffffff;">
-            
+
             <!-- Payment Details Section -->
             <div style="background: #f8fafc; padding: 25px; border-radius: 10px; margin-bottom: 30px; border-left: 5px solid #3b82f6;">
               <h2 style="color: #1e293b; margin: 0 0 20px 0; font-size: 24px; display: flex; align-items: center;">
@@ -155,11 +156,11 @@ const sendAdvanceReceipt = async (req, res) => {
                 Best regards,<br>
                 <span style="color: #3b82f6;">Pouchpuram Team</span>
               </p>
-              
+
               <!-- Logo Placeholder -->
               <div style="text-align: center; margin-top: 30px;">
-                <img src="https://via.placeholder.com/200x80/3b82f6/ffffff?text=Pouchpuram+Logo" 
-                     alt="Pouchpuram Logo" 
+                <img src="https://via.placeholder.com/200x80/3b82f6/ffffff?text=Pouchpuram+Logo"
+                     alt="Pouchpuram Logo"
                      style="max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
               </div>
             </div>

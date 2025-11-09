@@ -2,10 +2,10 @@ const { default: mongoose } = require("mongoose");
 const packagingRequirements = require("../models/packagingRequirements")
 
 const addPackagingRequirements = async (req, res) => {
-  const { name, email, phone, company, packagingType, quantity, material, size, requirements} = req.body;
+  const { name, email, phone, packagingType, quantity, material, size, requirements,state} = req.body;
 
   try{
-    if(!name || !email || !phone || !company || !packagingType || !quantity || !material || !size || !requirements){
+    if(!name || !email || !phone || !packagingType || !quantity || !material || !size || !requirements || !state){
       return res.status(400).json({message: "All fields are required"})
     }
     const packagingRequirement = new packagingRequirements({
@@ -13,12 +13,13 @@ const addPackagingRequirements = async (req, res) => {
       name,
       email,
       phone,
-      company,
+
       packagingType,
       quantity,
       material,
       size,
-      requirements
+      requirements,
+      state
     })
     await packagingRequirement.save()
     return res.status(200).json(packagingRequirement)
