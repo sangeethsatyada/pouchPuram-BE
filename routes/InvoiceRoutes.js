@@ -19,6 +19,6 @@ router.put("/updateInvoice/:id", updateInvoice)
 router.delete("/deleteInvoice/:id", deleteInvoice)
 
 router.post("/sendReceipt", sendReceipt)
-router.post("/sendInvitation", sendInvitation) // You can implement sendInvitation similarly
+router.post("/sendInvitation", sendInvitation)
 
 module.exports = router
