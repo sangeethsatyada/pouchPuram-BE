@@ -1,8 +1,7 @@
 const express = require("express")
 const nodemailer = require("nodemailer")
 const Invoice = require("../models/InvoiceSchema")
-
-const Resend = require("resend")
+const { Resend } = require('resend');
 
 const dotenv = require("dotenv")
 dotenv.config()
@@ -175,7 +174,7 @@ Your Business Team`,
 
 
 
-const resend = new Resend(process.env.ADMIN_RESEND);
+const resend = new Resend(process.env.RESEND_API_KEY);  // Correct env name
 
 const sendInvitation = async (req, res) => {
   console.log("Sending enquiry confirmation email...");
